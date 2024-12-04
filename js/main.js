@@ -96,10 +96,12 @@ $(document).ready(function() {
             }
         }
     });
-    
     /*------- Page Scrolling -------*/
     $.scrollIt({
         topOffset: -50
     });
-    
+    /*------- Navbar Collapse -------*/
+    $(".nav-link").on("click", function(){
+        $(".navbar-collapse").collapse("hide");
+    });
 });
