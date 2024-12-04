@@ -78,7 +78,7 @@ $(document).ready(function() {
             }
         }
     });
-    /*------- team Carousel -------*/
+    /*------- Team Carousel -------*/
     $('.team-carousel').owlCarousel({
         loop:true,
         margin:0,
@@ -96,4 +96,10 @@ $(document).ready(function() {
             }
         }
     });
+    
+    /*------- Page Scrolling -------*/
+    $.scrollIt({
+        topOffset: -50
+    });
+    
 });
