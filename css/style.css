@@ -29,6 +29,17 @@ body {
     background-color: #fff;
     line-height: 1.5;
 }
+body.dark{
+    background-color: var(--bg-dark);
+    --black-100: var(--bg-dark);
+    --black-000: var(--bg-dark);
+    --main-to-dark-color: var(--bg-dark);
+    --dark-to-main-color: var(--main-color);
+    --shadow-black-100: var(--shadow-black-300);
+    --black-alpha-100: rgba(255,255,255,0.05);
+    --black-900: #fff;
+    --black-400: #bbb;
+}
 *{
     margin: 0;
     padding: 0;
@@ -427,14 +438,14 @@ Features Section
     line-height: 60px;
     
 }
-.features .feature-item .icon h3{
+.features .feature-item h3{
     font-size: 22px;
     margin: 0 0 20px;
     color: var(--black-900);
     font-weight: 500;
     text-transform: capitalize;
 }
-.features .feature-item .icon p{
+.features .feature-item p{
     font-size: 16px;
     line-height: 26px;
     font-weight: 300;
@@ -942,6 +953,27 @@ Footer
     font-weight: 300;
     margin: 50px 0 0;
     border-top: 1px solid rgba(255,255,255,0.2);
+}
+/*---------------
+Toggle Theme
+---------------*/
+.toggle-theme{
+    position: fixed;
+    right: 0;
+    top: calc(50%);
+    height: 40px;
+    width: 40px;
+    background-color: var(--dark-to-main-color);
+    z-index: 1200;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: var(--shadow-black-300);
+    font-size: 16px;
+    text-align: center;
+}
+.toggle-theme i{
+    line-height: 40px;
 }
 /*---------------
 Responsive

@@ -104,4 +104,74 @@ $(document).ready(function() {
     $(".nav-link").on("click", function(){
         $(".navbar-collapse").collapse("hide");
     });
+    /*------- Toggle Theme -------*/
+function toggleTheme() {
+    // Check if the theme is already set in localStorage
+    if (localStorage.getItem("shala-theme") !== null) {
+        if (localStorage.getItem("shala-theme") === "dark") {
+            $("body").addClass("dark");
+        } else {
+            $("body").removeClass("dark");
+        }
+    } else {
+        // Set a default theme if not present
+        localStorage.setItem("shala-theme", "light");
+    }
+    updateIcon();
+}
+toggleTheme();
+
+// Handle theme toggle click
+$(".toggle-theme").on("click", function () {
+    $("body").toggleClass("dark");
+    if ($("body").hasClass("dark")) {
+        localStorage.setItem("shala-theme", "dark");
+    } else {
+        localStorage.setItem("shala-theme", "light");
+    }
+    updateIcon();
+});
+
+// Update the toggle icon
+function updateIcon() {
+    if ($("body").hasClass("dark")) {
+        $(".toggle-theme i").removeClass("fa-moon").addClass("fa-sun");
+    } else {
+        $(".toggle-theme i").removeClass("fa-sun").addClass("fa-moon");
+    }
+}
+
+    /*------- Toggle Theme -------
+    function toggleTheme(){
+        if(localStorage.setItem("shala-theme") !== null){
+            if(localStorage.getItem("shala-theme") === "dark"){
+                $("body").addClass("dark");
+            }
+            else{
+                $("body").removeClass("dark");
+            }
+        }
+        updateIcon();
+    }
+    toggleTheme();
+    $(".toggle-theme").on("click", function(){
+        $("body").toggleClass("dark");
+        if($("body").hasClass("dark")){
+            localStorage.setItem("shala-theme", "dark");
+        }
+        else{
+            localStorage.setItem("shala-theme", "light");
+        }
+        updateIcon();
+    });
+    function updateIcon(){
+        if($("body").hasClass("dark")){
+            $(".toggle-theme i").removeClass("fa-moon");
+            $(".toggle-theme i").addClass("fa-sun");
+        }
+        else{
+            $(".toggle-theme i").removeClass("fa-sun");
+            $(".toggle-theme i").addClass("fa-moon");
+        }
+    }*/
 });
